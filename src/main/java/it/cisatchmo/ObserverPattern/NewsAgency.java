@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewsAgency {
-    private String news;
     private List<Channel> channels = new ArrayList<>();
 
-    public void setNews(String news) {
-        this.news = news;
+    public void broadcast(String news) {
         for (Channel channel : this.channels) {
             channel.update(news);
         }
     }
 
-    public void setChannels(List<Channel> channels) {
-        this.channels = channels;
+    public void addChannel(NewsChannel channel) {
+        this.channels.add(channel);
     }
 }
